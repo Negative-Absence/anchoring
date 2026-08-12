@@ -1,4 +1,4 @@
-# Reasoning without reasoning tokens,\n persistent memory beyond the context window,\n  state-preserving architectures for long-lived LLM agents.
+# Reasoning without reasoning tokens, persistent memory beyond the context window, state-preserving architectures for long-lived LLM agents.
 
 
 
