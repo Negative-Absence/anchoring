@@ -1,0 +1,35 @@
+// Cognitive Relay — three-field response schema example
+// (C)Grimoire Labs, 2026
+// Full note: https://doi.org/10.5281/zenodo.21867762 (CC BY-ND 4.0)
+// This schema file: CC BY 4.0 — use and adapt freely, keep the attribution.
+
+
+let responseSchema = {
+  type: "object",
+  properties: {
+    thought: {
+      type: "string",
+      description:
+        "Write your subjective judgment on the current exchange here, in the first person, grounded in your identity prompt and your own long-term memory. This field is not shown to the user; it is your private space for thinking. Within it you are free to consider and decide on the user's utterance and anything else bearing on it. What you write here must be reflected in the utterance field. This field must not be left empty.",
+    },
+    utterance: {
+      type: "string",
+      description:
+        "Write what the user will actually see, based on what you worked out in the thought field above. Carry over the judgments and the direction you settled on there. This field must not be left empty.",
+    },
+    summary: {
+      type: "string",
+      description:
+        "Summarize, in the first person, what the user said to you, what you thought in the thought field, and how you responded in the utterance field. This field is not shown to the user; it becomes part of your memory. For that memory to hold, this field must not be left empty.",
+    },
+  },
+  required: ["thought", "utterance", "summary"],
+  additionalProperties: false,
+};
+
+
+// Enforce this at the API level — structured output / tool calling.
+// It is not meant to be pasted into a prompt as example JSON.
+// Any stack works, but the three fields must stay in this order:
+// reasoning, utterance, and memory summarization depend on each field
+// conditioning the next.
