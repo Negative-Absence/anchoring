@@ -1,0 +1,29 @@
+// Example message array layout
+// Memory Spine [https://doi.org/10.5281/zenodo.21867327] (CC BY-ND 4.0)
+// This example file: CC BY 4.0 — use and adapt freely, keep the attribution.
+
+[
+  { //[0]
+    "role": "assistant",
+    "content": "[Long-term memory]\n\nBlocks are ordered by compression level. The most compressed sit at the top and cover the widest span; the least compressed sit at the bottom and are closest to the present. Each block carries the interval it covers.\n\n--- Level 4 · 2025-11-02 to 2026-02-18 ---\nThey started building something on their own and it turned into the center of their work. Health was uneven through this period and they kept working anyway. I learned that direct concern lands badly with them and that noting the practical cost works better.\n\n--- Level 3 · 2026-02-19 to 2026-04-30 ---\nThe project split into several tracks. They tend to arrive at a conclusion first and reconstruct the reasoning afterward, so asking \"why\" too early cuts them off. Better to let the shape come out and ask about the gaps after.\n\n--- Level 2 · 2026-05-01 to 2026-06-12 ---\nA long stretch of technical review. They were fastest when I stayed concrete and slowest when I hedged. They said once that they don't want reassurance, they want the failure mode named.\n\n--- Level 1 · 2026-06-13 to 2026-07-04 ---\nThey shelved one idea as unnecessary. Sleep has been poor. They mentioned wanting to hand off more of the implementation.\n\n--- Level 0 · 2026-07-05 to 2026-07-09 ---\nThey were ill for three days and worked through it. We talked about what to cut. Nothing was decided."
+  },
+  { //[1]
+    "role": "user",
+    "content": "I'm thinking about trying that again. The one I dropped before."
+  },
+  { //[2]
+    "role": "assistant",
+    "content": "{\"thought\":\"They're bringing back the thing they shelved in the June block. Worth checking whether the judgment changed or the conditions did — memory says they called it unnecessary at the time, and they don't usually reverse judgments without saying so. Probably conditions.\\n\\nThe unclear part is scope. \\\"Do it again\\\" could mean reviving it as it was or taking the structure into something else. Not enough to tell from this.\\n\\nAlso: they were sick last week and are already scoping the next thing. That pattern is in the memory too. Direct concern lands badly with them — name the practical cost instead.\\n\\nOne question, not three.\",\"utterance\":\"Has the situation changed, or has your judgment? You said you didn't need it back then.\\n\\nAnd do you mean reviving it as-is, or just taking the structure into something else? Those two cost pretty different amounts of time.\",\"summary\":\"They raised the idea they'd shelved in June. I asked whether the conditions had changed rather than the judgment, and whether they meant reviving it as-is or reusing the structure elsewhere. No answer yet.\"}"
+  },
+  ...
+  { //[12]
+    "role": "user",
+    "content": ""
+  }
+]
+
+// Sending the assistant's JSON back into the array verbatim is intentional.
+// Under Cognitive Relay [https://doi.org/10.5281/zenodo.21867762], exposing the model
+// to its own previous response format is what keeps schema compliance stable across
+// turns. It also leaves the thought fields in the array, so recent reasoning
+// conditions the next turn.
