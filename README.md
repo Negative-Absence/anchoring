@@ -1,5 +1,6 @@
-# anchoring
-: Design notes on memory, state, and interaction architecture for persistent LLM agents.
+# Reasoning without reasoning tokens, 
+# persistent memory beyond the context window, 
+# state-preserving architectures for long-lived LLM agents.
 
 ## Technical Notes
 
