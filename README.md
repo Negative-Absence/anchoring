@@ -4,6 +4,8 @@
 
 ## Technical Notes
 
+### Assembly Version Technical Document: https://doi.org/10.5281/zenodo.21990589
+
 ### Cognitive Relay: Thought Process and Summary Generation through Response-Schema Field Separation
 [https://doi.org/10.5281/zenodo.21867762]
 
